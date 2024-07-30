@@ -94,7 +94,7 @@ export async function updateInvoice(
   formData: FormData
 ) {
   // Validate form using Zod
-  const validatedFields = UpdateInvoice.parse({
+  const validatedFields = UpdateInvoice.safeParse({
     customerId: formData.get('customerId'),
     amount: formData.get('amount'),
     status: formData.get('status'),
